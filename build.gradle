@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        nav_version = "2.5.2"
+        room_version = "2.5.2"
+        lifecycle_version = '2.5.1'
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = uri("https://repo.spring.io/release")
+        }
+        maven {
+            url = uri("https://repository.jboss.org/maven2")
+        }
+    }
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20'
+    }
+}

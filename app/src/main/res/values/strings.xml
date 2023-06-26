@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">todoApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_correct_password">Enter correct username and password</string>
+    <string name="write_matching_password">Enter matching password</string>
+    <string name="enter_other_username">The username is already taken</string>
+    <string name="enter_valid_username">The username and password cannot be blank</string>
+    <string name="add_new_item">Add new item</string>
+</resources>
