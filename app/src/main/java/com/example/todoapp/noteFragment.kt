@@ -45,7 +45,7 @@ class noteFragment : Fragment() {
             binding.note.text=task.note
         }
         binding.floatingAdd.setOnClickListener{
-            findNavController().navigate(noteFragmentDirections.actionNoteFragmentToAddNoteFragment())
+            findNavController().navigate(noteFragmentDirections.actionNoteFragmentToAddNoteFragment(navigationArgs.id))
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.todoapp
 
+import android.icu.text.Transliterator.Position
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -58,7 +59,10 @@ class listTask : Fragment(),todoAdapter.noteClickDeleteInterface {
         viewmodel.getAllItems.observe(this.viewLifecycleOwner){
             items->items.let {
                 adapter.submitList(it)
+
+
         }
+
 
         }
         binding.recyclerView.adapter=adapter
@@ -73,6 +77,7 @@ class listTask : Fragment(),todoAdapter.noteClickDeleteInterface {
     }
 
     override fun itemViewClick(task: task) {
+        val adapter =todoAdapter
         findNavController().navigate(listTaskDirections.actionListTaskToNoteFragment(id = task.id))
     }
 

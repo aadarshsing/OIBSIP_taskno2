@@ -29,7 +29,8 @@ class todoViewmodel(private val userDao: UserDao):ViewModel() {
 
     }
     fun checkforUsernamePassword(username: String,password: String):Boolean{
-            return userDao.login(username, password)
+        return userDao.login(username, password)
+
     }
     fun isEntryValid(username: String,password: String):Boolean{
         if(username.isBlank() || password.isBlank()){
@@ -65,9 +66,9 @@ class todoViewmodel(private val userDao: UserDao):ViewModel() {
     fun getNote(id:Int):LiveData<task>{
         return userDao.getNote(id).asLiveData()
     }
-    fun updateItem(note:String){
+    fun updateItem(note:String,id: Int){
         viewModelScope.launch {
-            userDao.updateNote(note)
+            userDao.updateNote(note,id)
         }
     }
     fun deleteForTask(task: task){

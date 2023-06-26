@@ -80,5 +80,8 @@
             app:popUpToInclusive="true"
             android:id="@+id/action_addNoteFragment_to_listTask"
             app:destination="@id/listTask" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

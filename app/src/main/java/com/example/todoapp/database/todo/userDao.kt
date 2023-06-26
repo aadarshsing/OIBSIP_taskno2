@@ -26,8 +26,8 @@ interface UserDao{
      @Query("select * from task where id =:id")
      fun getNote(id:Int):Flow<task>
 
-     @Query("update task set note =:note")
-    suspend fun updateNote(note:String)
+     @Query("update task set note =:note where id =:id")
+    suspend fun updateNote(note:String,id: Int)
 
 
 }

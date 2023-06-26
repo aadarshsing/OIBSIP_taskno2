@@ -56,6 +56,7 @@ class loginFragment : Fragment() {
             binding.username.text.toString(),
             binding.password.text.toString()
         )
+
     }
     private fun login(){
         if(isEntryValid()) {

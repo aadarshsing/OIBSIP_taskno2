@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.todoapp.database.todo.task
 import com.example.todoapp.databinding.FragmentAddNoteBinding
 import com.example.todoapp.model.todoViewModelFactory
@@ -14,6 +15,7 @@ import com.example.todoapp.model.todoViewmodel
 
 class addNoteFragment : Fragment() {
     lateinit var task:task
+    private val navigationArgs:noteFragmentArgs by navArgs()
     private val viewmodel: todoViewmodel by activityViewModels {
         todoViewModelFactory((activity?.application as todoApplication).database.userDao())
     }
@@ -32,7 +34,8 @@ class addNoteFragment : Fragment() {
     }
     private fun addnote(){
         viewmodel.updateItem(
-            binding.note.text.toString()
+            binding.note.text.toString(),
+            this.navigationArgs.id
         )
 
     }
